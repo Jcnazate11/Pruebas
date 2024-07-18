@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Citas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestionar Citas</h1>
+        <h2>Crear Cita</h2>
+        <form id="cita-form">
+            <label for="paciente_id">Paciente ID:</label>
+            <input type="number" id="paciente_id" name="paciente_id" required>
+            
+            <label for="medico_id">Médico ID:</label>
+            <input type="number" id="medico_id" name="medico_id" required>
+            
+            <label for="fecha_cita">Fecha:</label>
+            <input type="date" id="fecha_cita" name="fecha_cita" required>
+            
+            <label for="hora_cita">Hora:</label>
+            <input type="time" id="hora_cita" name="hora_cita" required>
+            
+            <label for="consultorio">Consultorio:</label>
+            <input type="text" id="consultorio" name="consultorio" required>
+            
+            <button type="submit">Crear Cita</button>
+        </form>
+        
+        <h2>Modificar Cita</h2>
+        <form id="modificar-cita-form">
+            <label for="cita_id">Cita ID:</label>
+            <input type="number" id="cita_id" name="cita_id" required>
+            
+            <label for="paciente_id_mod">Paciente ID:</label>
+            <input type="number" id="paciente_id_mod" name="paciente_id_mod">
+            
+            <label for="medico_id_mod">Médico ID:</label>
+            <input type="number" id="medico_id_mod" name="medico_id_mod">
+            
+            <label for="fecha_cita_mod">Fecha:</label>
+            <input type="date" id="fecha_cita_mod" name="fecha_cita_mod">
+            
+            <label for="hora_cita_mod">Hora:</label>
+            <input type="time" id="hora_cita_mod" name="hora_cita_mod">
+            
+            <label for="consultorio_mod">Consultorio:</label>
+            <input type="text" id="consultorio_mod" name="consultorio_mod">
+            
+            <button type="submit">Modificar Cita</button>
+        </form>
+        
+        <h2>Eliminar Cita</h2>
+        <form id="eliminar-cita-form">
+            <label for="cita_id_elim">Cita ID:</label>
+            <input type="number" id="cita_id_elim" name="cita_id_elim" required>
+            
+            <button type="submit">Eliminar Cita</button>
+        </form>
+        <a href="/">Volver al menú principal</a>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

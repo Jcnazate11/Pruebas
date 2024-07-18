@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertar Paciente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Insertar Paciente</h1>
+        <form id="paciente-form">
+            <label for="nombre_paciente">Nombre:</label>
+            <input type="text" id="nombre_paciente" name="nombre_paciente" required>
+            
+            <label for="apellido_paciente">Apellido:</label>
+            <input type="text" id="apellido_paciente" name="apellido_paciente" required>
+            
+            <label for="fecha_nacimiento_paciente">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento_paciente" name="fecha_nacimiento_paciente" required>
+            
+            <label for="email_paciente">Email:</label>
+            <input type="email" id="email_paciente" name="email_paciente" required>
+            
+            <button type="submit">Crear Paciente</button>
+        </form>
+        <a href="/">Volver al menú principal</a>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
