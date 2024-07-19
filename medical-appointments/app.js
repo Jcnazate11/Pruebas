@@ -20,15 +20,15 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/medico', (req, res) => {
+app.get('/medico.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'medico.html'));
 });
 
-app.get('/paciente', (req, res) => {
+app.get('/paciente.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'paciente.html'));
 });
 
-app.get('/cita', (req, res) => {
+app.get('/cita.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'cita.html'));
 });
 

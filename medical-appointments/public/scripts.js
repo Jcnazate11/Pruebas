@@ -24,10 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Médico creado:', data);
+                if (data.error) {
+                    throw new Error(data.error);
+                }
                 alert('Médico creado correctamente');
             })
             .catch((error) => {
+                alert('Error al crear médico: ' + error.message);
                 console.error('Error:', error);
             });
         });
@@ -60,10 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Paciente creado:', data);
+                if (data.error) {
+                    throw new Error(data.error);
+                }
                 alert('Paciente creado correctamente');
             })
             .catch((error) => {
+                alert('Error al crear paciente: ' + error.message);
                 console.error('Error:', error);
             });
         });
@@ -98,10 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Cita creada:', data);
+                if (data.error) {
+                    throw new Error(data.error);
+                }
                 alert('Cita creada correctamente');
             })
             .catch((error) => {
+                alert('Error al crear cita: ' + error.message);
                 console.error('Error:', error);
             });
         });
@@ -137,10 +146,13 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Cita modificada:', data);
+                if (data.error) {
+                    throw new Error(data.error);
+                }
                 alert('Cita modificada correctamente');
             })
             .catch((error) => {
+                alert('Error al modificar cita: ' + error.message);
                 console.error('Error:', error);
             });
         });
@@ -162,13 +174,15 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => {
                 if (response.status === 204) {
-                    console.log('Cita eliminada');
                     alert('Cita eliminada correctamente');
                 } else {
-                    throw new Error('Error eliminando la cita');
+                    return response.json().then(data => {
+                        throw new Error(data.error || 'Error eliminando la cita');
+                    });
                 }
             })
             .catch((error) => {
+                alert('Error al eliminar cita: ' + error.message);
                 console.error('Error:', error);
             });
         });
